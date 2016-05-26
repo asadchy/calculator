@@ -168,7 +168,7 @@ static ssize_t read_answer (struct file *file, char *buf, size_t count, loff_t *
 			break;
 	}
 
-	sprintf(answer, "%d %c %d = %d\n\0", first_op, operation[0], second_op, answer_op);
+	sprintf(answer, "%d %c %d = %d\n", first_op, operation[0], second_op, answer_op);
 
 	for(i = 0; answer[i] != '\0'; i++)	
 		put_user(answer[i], buf+i);
